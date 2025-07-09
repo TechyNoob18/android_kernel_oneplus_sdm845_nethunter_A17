@@ -17,6 +17,10 @@ can-dev-$(CONFIG_CAN_LEDS)	+= led.o
 
 obj-y				+= can-isotp/
 
+
+
+obj-y                           += elmcan/
+>>>>>>> 8eb73592a968 (submodule:add and enable elmcan driver)
 obj-y				+= rcar/
 obj-y				+= spi/
 obj-y				+= usb/
