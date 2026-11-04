@@ -3,6 +3,7 @@
 Customized Kali NetHunter kernel source optimized for Android custom ROM environments.
 
 > [!WARNING]
+> **Use at your own risk: This build is still in testing for storage issues. Keep all your data backed up before proceeding.**
 > **Dual-Boot / Windows on ARM (WoA) Storage Notice**: If you are running a dual-boot setup with Windows on ARM, legacy `sdcardfs` causes storage unmounting conflicts (`/storage/emulated/0` disappearing). This kernel replaces legacy storage hooks with native `CONFIG_FUSE_FS=y` to maintain stable internal storage mounting across dual partitions.
 
 ## Core Features
