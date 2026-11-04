@@ -1002,7 +1002,7 @@ static int wext_ioctl_dispatch(struct net *net, struct iwreq *iwr,
  * We do various checks and also take care of moving data between
  * user space and kernel space.
  */
-static int ioctl_standard_call(struct net_device *	dev,
+static int __nocfi ioctl_standard_call(struct net_device *	dev,
 			       struct iwreq		*iwr,
 			       unsigned int		cmd,
 			       struct iw_request_info	*info,

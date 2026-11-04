@@ -17,7 +17,7 @@ EXTRA_CFLAGS += -Wno-incompatible-pointer-types
 EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
 #endif
 
-EXTRA_CFLAGS += -I$(src)/include
+EXTRA_CFLAGS += -I$(srctree)/$(src)/include
 EXTRA_LDFLAGS += --strip-debug
 
 ########################## WIFI IC ############################
@@ -221,10 +221,10 @@ _HAL_INTFS_FILES :=	hal/hal_intf.o \
 			hal/led/hal_$(HCI_NAME)_led.o
 
 
-EXTRA_CFLAGS += -I$(src)/platform
+EXTRA_CFLAGS += -I$(srctree)/$(src)/platform
 _PLATFORM_FILES := platform/platform_ops.o
 
-EXTRA_CFLAGS += -I$(src)/hal/btc
+EXTRA_CFLAGS += -I$(srctree)/$(src)/hal/btc
 
 ########### HAL_RTL8188E #################################
 ifeq ($(CONFIG_RTL8188E), y)
@@ -2314,3 +2314,11 @@ clean:
 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
 	rm -fr .tmp_versions
 endif
+EXTRA_CFLAGS += -I$(srctree)/$(src)/include -I$(srctree)/$(src)/core -I$(srctree)/$(src)/hal -I$(srctree)/$(src)/os_dep/linux -I$(srctree)/$(src)/os_dep -Wno-error
+ccflags-y += -I$(srctree)/$(src)/include -I$(srctree)/$(src)/core -I$(srctree)/$(src)/hal -I$(srctree)/$(src)/os_dep/linux -I$(srctree)/$(src)/os_dep -Wno-error
+
+EXTRA_CFLAGS += -I$(srctree)/$(src)/hal/phydm/halrf -I$(srctree)/$(src)/hal/phydm/rtl8812a -I$(srctree)/$(src)/hal/phydm/baselib
+ccflags-y += -I$(srctree)/$(src)/hal/phydm/halrf -I$(srctree)/$(src)/hal/phydm/rtl8812a -I$(srctree)/$(src)/hal/phydm/baselib
+
+EXTRA_CFLAGS += -I$(srctree)/$(src)/hal/phydm -I$(srctree)/$(src)/hal/phydm/halrf -I$(srctree)/$(src)/hal/phydm/rtl8812a
+ccflags-y += -I$(srctree)/$(src)/hal/phydm -I$(srctree)/$(src)/hal/phydm/halrf -I$(srctree)/$(src)/hal/phydm/rtl8812a
