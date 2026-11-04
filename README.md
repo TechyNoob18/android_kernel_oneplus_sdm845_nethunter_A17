@@ -1,4 +1,4 @@
-# NetHunter Kernel for OnePlus 6 / 6T (sdm845 / enchilada / fajita)
+# NetHunter Kernel for OnePlus 6 / 6T (sdm845 / enchilada / fajita) Android 17 (LineageOS 24)
 
 Customized Kali NetHunter kernel source optimized for Android custom ROM environments.
 
